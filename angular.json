@@ -29,7 +29,7 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss", "src/m3-styles.scss"],
+            "styles": ["src/styles.scss", "src/m3-theme.scss"],
             "scripts": []
           },
           "configurations": {
@@ -83,7 +83,7 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss", "src/m3-styles.scss"],
+            "styles": ["src/styles.scss", "src/m3-theme.scss"],
             "scripts": []
           }
         }
