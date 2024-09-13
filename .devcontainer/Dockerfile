@@ -7,4 +7,3 @@ WORKDIR /angular-18
 # Install git and other necessary tools
 RUN apk add --no-cache git
 RUN npm install -g @angular/cli@18
-
