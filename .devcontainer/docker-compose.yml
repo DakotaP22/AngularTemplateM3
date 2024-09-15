@@ -1,0 +1,28 @@
+version: "3"
+services:
+  angular:
+    build:
+      context: ..
+      dockerfile: ./.devcontainer/Dockerfile
+    volumes:
+      - angular_node_modules:/angular-18/node_modules
+      - ../:/angular-18
+    command: sleep infinity
+    ports:
+      - "4200:4200"
+  firebase-emulators:
+    build:
+      context: ..
+      dockerfile: ./.devcontainer/Dockerfile.emulators
+    volumes:
+      - ../firebase:/firebase-emulators
+      - firebase_node_modules:/firebase-emulators/node_modules
+      - ../package.json:/firebase-emulators/package.json
+      - ../package-lock.json:/firebase-emulators/package-lock.json
+    ports:
+      - "4000:4000"
+    # command: firebase emulators:start
+    command: sh -c "npm install && firebase emulators:start"
+volumes:
+  angular_node_modules:
+  firebase_node_modules:
