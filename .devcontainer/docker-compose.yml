@@ -7,9 +7,12 @@ services:
     volumes:
       - angular_node_modules:/angular-18/node_modules
       - ../:/angular-18
-    command: sleep infinity
+    command: sh -c "npm install & sleep infinity"
+    networks:
+      - devcontainer-network
     ports:
       - "4200:4200"
+      
   firebase-emulators:
     build:
       context: ..
@@ -21,8 +24,17 @@ services:
       - ../package-lock.json:/firebase-emulators/package-lock.json
     ports:
       - "4000:4000"
+      - "5001:5001"
+      - "8080:8080"
     # command: firebase emulators:start
     command: sh -c "npm install && firebase emulators:start"
+    networks:
+      - devcontainer-network
+
+
 volumes:
   angular_node_modules:
   firebase_node_modules:
+networks:
+  devcontainer-network:
+    driver: bridge

@@ -7,7 +7,6 @@
         "source=angular_node_modules,target=/angular-18/node_modules,type=volume",
         "source=${localWorkspaceFolder},target=/angular-18,type=bind"
     ],
-    "postCreateCommand": "npm install",
     "customizations": {
         "vscode": {
             "extensions": [

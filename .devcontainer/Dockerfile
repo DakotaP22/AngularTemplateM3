@@ -5,5 +5,5 @@ FROM node:22-alpine
 WORKDIR /angular-18
 
 # Install git and other necessary tools
-RUN apk add --no-cache git
+RUN apk add --no-cache git curl
 RUN npm install -g @angular/cli@18
