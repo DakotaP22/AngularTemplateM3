@@ -12,6 +12,14 @@ services:
       - devcontainer-network
     ports:
       - "4200:4200"
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '2'
+          memory: 2G
       
   firebase-emulators:
     build:
@@ -30,6 +38,14 @@ services:
     command: sh -c "npm install && firebase emulators:start"
     networks:
       - devcontainer-network
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 1G
+        reservations:
+          cpus: '2'
+          memory: 500M
 
 
 volumes:
